@@ -1,5 +1,6 @@
-import { useState } from 'react'
-import Home from './pages/Home.jsx'
+import { useState } from 'react';
+import Home from './pages/Home.jsx';
+import IncentivesList from './IncentivesList';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -11,20 +12,18 @@ const allRoutes = [
     element: <Home />,
     errorElement: <p>Page not found</p>,
   },
+  {
+    path: "/incentives",
+    element: <IncentivesList />, //added a route for IncentivesList
+  },
 ];
 
-const router = createBrowserRouter(
-  allRoutes.map((route) => ({
-    ...route,
-    element: <Layout>{route.element}</Layout>,
-  }))
-);
+const router = createBrowserRouter(allRoutes);
 
 function App() {
-  // testing branch
   return (
-    <RouterProvider router={router} />  
-  )
+    <RouterProvider router={router} />
+  );
 }
 
-export default App
+export default App;
