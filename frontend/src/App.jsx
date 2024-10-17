@@ -5,6 +5,8 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
+import Layout from "./layouts/Layout.jsx";
+
 const allRoutes = [
   {
     path: "/",
