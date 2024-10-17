@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Home from './pages/Home.jsx';
-import IncentivesList from './IncentivesList';
+import IncentivesList from './pages/IncentivesList';
 import {
   createBrowserRouter,
   RouterProvider,
