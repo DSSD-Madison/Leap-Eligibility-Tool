@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import '../../../Styles/IncentivesList.css'; 
+import '../../../Styles/IncentivesList.css';
 
 const IncentivesList = () => {
   const [incentives, setIncentives] = useState([]);
 
   useEffect(() => {
-    // Fetch the JSON data
+    //fetch the JSON data
     fetch('../../incentives.json')
       .then((response) => response.json())
       .then((data) => setIncentives(data))
@@ -13,18 +13,18 @@ const IncentivesList = () => {
   }, []);
 
   return (
-    <div className="incentives-container">
-      <h1 className="title">Available Incentives</h1>
-      <div className="incentives-list">
+    <div className="incentives-container p-4">
+      <h1 className="text-3xl font-bold text-center mb-6">Available Incentives</h1>
+      <div className="grid grid-cols-1 gap-6">
         {incentives.map((incentive, index) => (
-          <div key={index} className="incentive-card">
-            <h2 className="incentive-name">{incentive.name}</h2>
+          <div key={index} className="card bg-base-100 shadow-lg p-4">
+            <h2 className="text-xl font-semibold">{incentive.name}</h2>
             <p><strong>State:</strong> {incentive.state}</p>
             <p><strong>Category:</strong> {incentive.category}</p>
             <p><strong>Policy Type:</strong> {incentive.policyType}</p>
             <p><strong>Created:</strong> {incentive.created}</p>
             <p><strong>Last Updated:</strong> {incentive.lastUpdated}</p>
-            <a href={incentive.link} className="incentive-link">More Info</a>
+            <a href={incentive.link} className="link link-primary">More Info</a>
           </div>
         ))}
       </div>
