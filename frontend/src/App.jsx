@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Home from './pages/Home.jsx'
+import Form from './pages/Form.jsx'
 import {
   createBrowserRouter,
   RouterProvider,
@@ -12,7 +13,10 @@ const allRoutes = [
     path: "/",
     element: <Home />,
     errorElement: <p>Page not found</p>,
-  },
+  }, {
+    path: "/form",
+    element: <Form />
+  }
 ];
 
 const router = createBrowserRouter(
