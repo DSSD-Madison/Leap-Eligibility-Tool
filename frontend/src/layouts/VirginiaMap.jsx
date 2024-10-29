@@ -15,12 +15,12 @@ const VirginiaMap = () => {
             <ComposableMap
                 projection="geoMercator"
                 projectionConfig={{
-                    scale: 3000,    // Adjust scale to fit Virginia
-                    center: [-78.6569, 37.4316],  // Centering on Virginia
+                    scale: 5500,    // Adjust scale to fit Virginia
+                    //         x      y coordinates of the actual
+                    center: [-79.02, 37.98],  // Centering on Virginia
                 }}
-                width={800}
-                height={300}
-                className={"mt-0 p-0"}
+                width={900}
+                height={400}
             >
                     {/* Geographies expects a function as a child */}
                     <Geographies geography={mapData}>
