@@ -1,11 +1,8 @@
-import VirginiaMap from "../layouts/VirginiaMap.jsx";
+import VirginiaMap from "../components/VirginiaMap.jsx";
 
-function Home() {
-    // testing branch
+const Home = () => {
     return (
-        <div className="max-h-[100rem] mx-auto">
-            <VirginiaMap/>
-        </div>
+        <VirginiaMap/>
     )
 }
 
