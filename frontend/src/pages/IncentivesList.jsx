@@ -22,7 +22,7 @@ const IncentivesList = () => {
                 {incentives.map((incentive, index) => (
                     <div key={index} className="card bg-base-100 shadow-lg p-4">
                         <div className={"flex flex-row items-center justify-between mb-2"}>
-                            <h2 className="card-title">{incentive.name}</h2>
+                            <h2 className="card-title font-bold">{incentive.name}</h2>
                             <div className="badge badge-outline rounded-xl ml-2 p-3 min-w-fit">{incentive.category}</div>
                         </div>
                         <div className={"flex flex-col max-sm:grid-cols-1 gap-2"}>
