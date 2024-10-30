@@ -1,32 +1,36 @@
-import { useState } from 'react'
-import Home from './pages/Home.jsx'
+import {useState} from 'react';
+import Home from './pages/Home.jsx';
+import IncentivesList from './pages/IncentivesList';
 import {
-  createBrowserRouter,
-  RouterProvider,
+    createBrowserRouter,
+    RouterProvider,
 } from "react-router-dom";
 
 import Layout from "./layouts/Layout.jsx";
 
 const allRoutes = [
-  {
-    path: "/",
-    element: <Home />,
-    errorElement: <p>Page not found</p>,
-  },
+    {
+        path: "/",
+        element: <Home/>,
+        errorElement: <p>Page not found</p>,
+    },
+    {
+        path: "/incentives",
+        element: <IncentivesList/>, //added a route for IncentivesList
+    },
 ];
 
 const router = createBrowserRouter(
-  allRoutes.map((route) => ({
-    ...route,
-    element: <Layout>{route.element}</Layout>,
-  }))
-);
+    allRoutes.map((route) => ({
+        ...route,
+        element: <Layout>{route.element}</Layout>,
+    }))
+);  
 
 function App() {
-  // testing branch
-  return (
-    <RouterProvider router={router} />  
-  )
+    return (
+        <RouterProvider router={router}/>
+    );
 }
 
-export default App
+export default App;

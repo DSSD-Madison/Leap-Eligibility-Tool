@@ -1,0 +1,48 @@
+[
+    {
+      "name": "Federal Appliance Standards",
+      "state": "US",
+      "category": "Regulatory Policy",
+      "policyType": "Appliance/Equipment Efficiency Standards",
+      "created": "06/30/2006",
+      "lastUpdated": "10/16/2024",
+      "link": "https://example.com/federal-appliance-standards"
+    },
+    {
+      "name": "Small Business & Non-Profit Loan Program",
+      "state": "VA",
+      "category": "Financial Incentive",
+      "policyType": "Loan Program",
+      "created": "07/07/2014",
+      "lastUpdated": "10/14/2024",
+      "link": "https://example.com/small-business-loan"
+    },
+    {
+      "name": "Energy Project and Equipment Financing",
+      "state": "VA",
+      "category": "Financial Incentive",
+      "policyType": "Loan Program",
+      "created": "06/20/2011",
+      "lastUpdated": "10/14/2024",
+      "link": "https://example.com/energy-project-financing"
+    },
+    {
+      "name": "Energy Efficiency Resource Goal",
+      "state": "VA",
+      "category": "Regulatory Policy",
+      "policyType": "Energy Efficiency Resource Standard",
+      "created": "12/07/2011",
+      "lastUpdated": "10/11/2024",
+      "link": "https://example.com/energy-efficiency-goal"
+    },
+    {
+      "name": "VirginiaSAVES Green Community Loan Program",
+      "state": "VA",
+      "category": "Financial Incentive",
+      "policyType": "Loan Program",
+      "created": "11/02/2015",
+      "lastUpdated": "10/11/2024",
+      "link": "https://example.com/virginia-saves"
+    }
+  ]
+  
