@@ -10,13 +10,12 @@ import Layout from "./layouts/Layout.jsx";
 
 const allRoutes = [
     {
-        path: "/",
-        element: <Home/>,
-        errorElement: <p>Page not found</p>,
+      path: "/",
+      element: <Home/>,
     },
     {
-        path: "/incentives",
-        element: <IncentivesList/>, //added a route for IncentivesList
+      path: "/incentives",
+      element: <IncentivesList/>, //added a route for IncentivesList
     },
 ];
 

@@ -1,0 +1,229 @@
+{
+  "incentives": [
+    {
+      "id": "shared-solar",
+      "name": "Shared Solar Program",
+      "state": "VA",
+      "category": "Regulatory Policy",
+      "policyType": "Community Solar Rules",
+      "created": "10/01/2021",
+      "lastUpdated": "01/11/2024",
+      "link": "https://programs.dsireusa.org/system/program/detail/22432/shared-solar-program",
+      "default": true
+    },
+    {
+      "id": "multi-family-solar",
+      "name": "Multi-family shared solar program",
+      "state": "VA",
+      "category": "Regulatory Policy",
+      "policyType": "Community Solar Rules",
+      "created": "10/01/2021",
+      "lastUpdated": "01/11/2024",
+      "link": "https://programs.dsireusa.org/system/program/detail/22433/multi-family-shared-solar-program",
+      "default": true
+    },
+    {
+      "id": "reap",
+      "name": "USDA - Rural Energy for America Program (REAP) Energy Audit and Renewable Energy Development Assistance (EA/REDA) Program",
+      "state": "US",
+      "category": "Financial Incentive",
+      "policyType": "Grant Program",
+      "created": "Unknown",
+      "lastUpdated": "08/28/2024",
+      "link": "https://programs.dsireusa.org/system/program/detail/5681/usda-rural-energy-for-america-program-reap-energy-audit-and-renewable-energy-development-assistance-ea-reda-program",
+      "default": true
+    },
+    {
+      "id": "liheap",
+      "name": "Low Income Home Energy Assistance Program (LIHEAP)",
+      "state": "US",
+      "category": "Financial Incentive",
+      "policyType": "Grant Program",
+      "created": "03/16/2015",
+      "lastUpdated": "11/18/2022",
+      "link": "https://programs.dsireusa.org/system/program/detail/5712/low-income-home-energy-assistance-program-liheap",
+      "default": true
+    },
+    {
+      "id": "wap",
+      "name": "Weatherization Assistance Program (WAP)",
+      "state": "US",
+      "category": "Financial Incentive",
+      "policyType": "Grant Program",
+      "created": "03/31/2015",
+      "lastUpdated": "01/01/1976",
+      "link": "https://programs.dsireusa.org/system/program/detail/5725/weatherization-assistance-program-wap",
+      "default": true
+    },
+    {
+      "id": "energy-mortgages",
+      "name": "Energy-Efficient Mortgages",
+      "state": "US",
+      "category": "Financial Incentive",
+      "policyType": "Loan Program",
+      "created": "03/21/2002",
+      "lastUpdated": "08/05/2020",
+      "link": "https://programs.dsireusa.org/system/program/detail/742/energy-efficient-mortgages",
+      "default": true
+    },
+    {
+      "id": "small-business-loan",
+      "name": "Small Business & Non-Profit Loan Program",
+      "state": "VA",
+      "category": "Financial Incentive",
+      "policyType": "Loan Program",
+      "created": "07/07/2014",
+      "lastUpdated": "07/14/2020",
+      "link": "https://programs.dsireusa.org/system/program/detail/5504/small-business-non-profit-loan-program",
+      "default": true
+    },
+    {
+      "id": "clean-energy-financing",
+      "name": "Local Option - Clean Energy Financing",
+      "state": "VA",
+      "category": "Financial Incentive",
+      "policyType": "PACE Financing",
+      "created": "07/15/2009",
+      "lastUpdated": "01/16/2024",
+      "link": "https://programs.dsireusa.org/system/program/detail/3531/local-option-clean-energy-financing",
+      "default": true
+    },
+    {
+      "id": "renewable-tax-credit",
+      "name": "Residential Renewable Energy Tax Credit",
+      "state": "US",
+      "category": "Financial Incentive",
+      "policyType": "Personal Tax Credit",
+      "created": "08/10/2005",
+      "lastUpdated": "08/16/2022",
+      "link": "https://programs.dsireusa.org/system/program/detail/1274/residential-energy-efficiency-tax-credit",
+      "default": true
+    },
+    {
+      "id": "efficiency-tax-credit",
+      "name": "Residential Energy Efficiency Tax Credit",
+      "state": "US",
+      "category": "Financial Incentive",
+      "policyType": "Personal Tax Credit",
+      "created": "01/10/2006",
+      "lastUpdated": "05/31/2024",
+      "link": "https://programs.dsireusa.org/system/program/detail/1274/residential-energy-efficiency-tax-credit",
+      "default": true
+    },
+    {
+      "id": "ev-tax-credit",
+      "name": "Plug-In Electric Drive Vehicle Tax Credit",
+      "state": "US",
+      "category": "Financial Incentive",
+      "policyType": "Personal Tax Credit",
+      "created": "08/18/2021",
+      "lastUpdated": "08/29/2022",
+      "link": "https://programs.dsireusa.org/system/program/detail/22352/plug-in-electric-drive-vehicle-tax-credit",
+      "default": true
+    },
+    {
+      "id": "refueling-tax-credit",
+      "name": "Alternative Fuel Vehicle Refueling Property Tax Credit (Personal)",
+      "state": "US",
+      "category": "Financial Incentive",
+      "policyType": "Personal Tax Credit",
+      "created": "08/18/2022",
+      "lastUpdated": "08/18/2022",
+      "link": "https://programs.dsireusa.org/system/program/detail/22475/alternative-fuel-vehicle-refueling-property-tax-credit-personal",
+      "default": true
+    },
+    {
+      "id": "used-ev-tax-credit",
+      "name": "Previously-Owned Clean Vehicle Tax Credit",
+      "state": "US",
+      "category": "Financial Incentive",
+      "policyType": "Personal Tax Credit",
+      "created": "08/26/2022",
+      "lastUpdated": "08/26/2022",
+      "link": "https://programs.dsireusa.org/system/program/detail/22476/previously-owned-clean-vehicle-tax-credit",
+      "default": true
+    },
+    {
+      "id": "energy-tax-deduction",
+      "name": "Income Tax Deduction for Energy-Efficient Products",
+      "state": "VA",
+      "category": "Financial Incentive",
+      "policyType": "Personal Tax Deduction",
+      "created": "09/28/2010",
+      "lastUpdated": "12/04/2020",
+      "link": "https://programs.dsireusa.org/system/program/detail/4362/income-tax-deduction-for-energy-efficient-products",
+      "default": true
+    },
+    {
+      "id": "sales-tax-exemption",
+      "name": "Sales Tax Exemption for Energy-Efficient Products (Sales Tax Holiday)",
+      "state": "VA",
+      "category": "Financial Incentive",
+      "policyType": "Sales Tax Incentive",
+      "created": "11/13/2007",
+      "lastUpdated": "02/24/2023",
+      "link": "https://programs.dsireusa.org/system/program/detail/2796/sales-tax-exemption-for-energy-efficient-products-sales-tax-holiday",
+      "default": true
+    },
+    {
+      "id": "local-rebate",
+      "name": "Local Residential Rebate Programs",
+      "state": "VA",
+      "category": "Financial Incentive",
+      "policyType": "Rebate Program",
+      "created": "MISSING",
+      "lastUpdated": "MISSING",
+      "link": "MISSING"
+    },
+    {
+      "id": "income-solar",
+      "name": "Income Qualifying Solar Program",
+      "state": "VA",
+      "category": "Financial Incentive",
+      "policyType": "Solar Incentive",
+      "created": "MISSING",
+      "lastUpdated": "MISSING",
+      "link": "MISSING"
+    },
+    {
+      "id": "age-weatherization",
+      "name": "Age Qualifying Weatherization Program",
+      "state": "VA",
+      "category": "Financial Incentive",
+      "policyType": "Weatherization",
+      "created": "MISSING",
+      "lastUpdated": "MISSING",
+      "link": "MISSING"
+    },
+    {
+      "id": "age-solar",
+      "name": "Age Qualifying Solar Program",
+      "state": "VA",
+      "category": "Financial Incentive",
+      "policyType": "Solar Incentive",
+      "created": "MISSING",
+      "lastUpdated": "MISSING",
+      "link": "MISSING"
+    },
+    {
+      "id": "rockingham-wind",
+      "name": "Rockingham County - Small Wind Ordinance",
+      "state": "VA",
+      "category": "Regulatory Policy",
+      "policyType": "Wind Energy",
+      "created": "MISSING",
+      "lastUpdated": "MISSING",
+      "link": "https://programs.dsireusa.org/system/program/detail/293/rockingham-county-small-wind-ordinance"
+    },
+    {
+      "id": "ev-charger-rewards",
+      "name": "Dominion Energy Virginia - EV Charger Rewards",
+      "state": "VA",
+      "category": "Financial Incentive",
+      "policyType": "Electric Vehicle",
+      "created": "MISSING",
+      "lastUpdated": "MISSING",
+      "link": "MISSING"
+    }
+  ]
+}
