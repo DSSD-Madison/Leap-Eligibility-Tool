@@ -14,7 +14,7 @@ const allRoutes = [
     element: <Home />,
     errorElement: <p>Page not found</p>,
   }, {
-    path: "/form",
+    path: "/q/county/:countyID",
     element: <Form />
   }
 ];
