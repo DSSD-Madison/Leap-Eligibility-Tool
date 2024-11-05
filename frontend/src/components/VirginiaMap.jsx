@@ -2,12 +2,14 @@ import React, { useState, useEffect, useRef } from "react";
 import { ComposableMap, Geographies, Geography, ZoomableGroup } from "react-simple-maps";
 import mapData from '../data/VA-optimized.json';
 import { useNavigate } from 'react-router-dom';
+import { useSearch } from '../layouts/Layout';
 
 const VirginiaMap = () => {
     const [tooltip, setTooltip] = useState({ show: false, county: "", x: 0, y: 0 });
     const [width, setWidth] = useState(900);
     const containerRef = useRef(null);
     const navigate = useNavigate();
+    const { setSearchQuery } = useSearch();
 
     useEffect(() => {
         const updateWidth = () => {
@@ -71,7 +73,10 @@ const VirginiaMap = () => {
                                 key={geo.rsmKey}
                                 onMouseMove={(event) => handleMouseMove(event, geo.properties.NAME)}
                                 onMouseLeave={handleMouseLeave}
-                                onClick={() => navigate(`/q/county/${geo.properties.GEOID}`)}
+                                onClick={() => {
+                                    setSearchQuery(geo.properties.NAME);
+                                    navigate(`/q/county/${geo.properties.GEOID}`)
+                                }}
                                 geography={geo}
                                 fill="#1e90ff"
                                 stroke="lightgrey"

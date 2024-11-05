@@ -1,9 +1,10 @@
-import React, { useRef, useState } from "react";
-import { useParams } from "react-router-dom";
+import React, { useRef, useState, useEffect } from "react";
 import { encode } from '../tools/hash.js'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import { useSearch } from '../layouts/Layout';
 
-function Form() {
+const Form = () => {
+  const { setSearchQuery, isCountyValid, covertCountyIDToName } = useSearch();
   const nameRef = useRef(null);
   const emailRef = useRef(null);
   const incomeRef = useRef(null);
@@ -14,11 +15,17 @@ function Form() {
   const [appliancesPurchased, setAppliancesPurchased] = useState(null);
   const [isCoopMember, setIsCoopMember] = useState(null);
   const [isElectricOwner, setIsElectricOwner] = useState(null);
-  const { countyID } = useParams();
-  const navigate = useNavigate();
-
-  // to create loader when loading
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+  const { countyID } = useParams();
+  const [validCounty, setValidCounty] = useState(false);
+
+  useEffect(() => {
+    if (countyID && isCountyValid(countyID)) {
+      setValidCounty(true);
+      setSearchQuery(covertCountyIDToName(countyID));
+    }
+  }, [countyID])
 
   const validateEmail = (email) => {
     return email.match(
@@ -28,11 +35,12 @@ function Form() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     setLoading(true);
     
     if (
-      nameRef === null ||
-      emailRef === null ||
+      nameRef.current === null ||
+      emailRef.current === null ||
       incomeRef.current === null ||
       oldestRef.current === null ||
       isHomeowner === null ||
@@ -40,15 +48,18 @@ function Form() {
       householdSize === null ||
       appliancesPurchased === null ||
       isCoopMember === null ||
-      isElectricOwner === null
+      isElectricOwner === null ||
+      countyID === null
     ) {
       alert("Please fill out all fields before submitting.");
-      return; // Exit early if any fields are null
+      setLoading(false);
+      return;
     }
 
-    // check that email is valid
     if (!validateEmail(emailRef.current.value)) {
       alert("Please enter a valid email");
+      setLoading(false);
+      return;
     }
 
     const name = nameRef.current.value;
@@ -70,60 +81,56 @@ function Form() {
       isElectricOwner: isElectricOwner,
     };
 
-    console.log(data);
+    // fetch("localhost:8080/api/responses", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(data),
+    // })
+    //   .then((res) => {
+    //     if (res !== 200) {
+    //       alert("Request failed");
+    //     }
+    //     return res.json();
+    //   })
+    //   .then((json) => {
+    //     alert("Submitted successfully");
+    //     setLoading(false);
+    //   });
 
-    fetch("localhost:8080/api/responses", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-      .then((res) => {
-        if (res !== 200) {
-          alert("Request failed");
-        }
-        return res.json();
-      })
-      .then((json) => {
-        alert("Submitted successfully");
-        setLoading(false);
-      });
+    let answers = Array(9).fill('n');
+    if(isHomeowner == "yes") answers[0] = 'y';
+    if(isBusinessOwner == "yes") answers[1] = 'y';
+    if(income < 52349) answers[2] = 'y';
+    if(oldest >= 60) answers[4] = 'y';
+    if(appliancesPurchased == "yes") answers[5] = 'y';
+    if(countyID == 51165) answers[6] = 'y';
+    if(isCoopMember == "yes") answers[7] = 'y';
+    if(isElectricOwner == "yes") answers[8] = 'y';
 
-      // redirect to url 
-      let answers = Array(9).fill('n');
-      if(isHomeowner == "yes"){
-        answers[0] = 'y';
-      } 
-      if(isBusinessOwner == "yes"){
-        answers[1] = 'y';
-      }
-      // Note: I found the median household income was $87,249
-      if(income < 52349){
-        answers[2] = 'y';
-      }
-      console.log("oldest", oldest);
-      if(oldest >= 60){
-        answers[4] = 'y';
-      }
-      if(appliancesPurchased == "yes"){
-        answers[5] = 'y';
-      }
-      if(countyID == 51165){
-        answers[6] = 'y';
-      }
-      if(isCoopMember == "yes"){
-        answers[7] = 'y';
-      }
-      if(isElectricOwner == "yes"){
-        answers[8] = 'y'
-      }
-
-      let answersEncoded = encode(answers);
-      navigate(`/incentives/${answersEncoded}`);
- 
+    navigate(`/incentives/${answersEncoded}`);
+    setLoading(false);
   };
 
+  // If no county is selected, show a message and disable the form
+  if (!validCounty) {
+    return (
+      <div className="hero min-h-[80vh] bg-base-200">
+        <div className="hero-content text-center">
+          <div className="max-w">
+            <h1 className="text-5xl font-bold mb-4">📍Select a Valid County</h1>
+            <p className="pt-6">
+              Please use the search bar above to select your county.
+            </p>
+            <p>
+              This will help us provide you with the most relevant information and assistance.
+            </p>
+          </div>
+        </div>
+      </div>
+    );
+  }
   return (
     <div>
       {/* sidebar */}
@@ -373,7 +380,8 @@ function Form() {
               className="block text-gray-700 font-medium mb-2"
               id="appliance"
             >
-              Have you purchased or updated any of the following appliances...?
+              Have you purchased or updated any of the following appliances: <br />
+              <span className="font-normal">Water Heaters, Furnaces, Boilers, Heat pumps, Air conditioners, Duct/Air sealing, Building Insulation, Windows, Doors, Clothes Washers, Dishwasher, Refrigerators/Freezers, Programmable Thermostats, or anything similar from 2005-2023?</span>
             </label>
             <div className="flex items-center mb-4">
               <input

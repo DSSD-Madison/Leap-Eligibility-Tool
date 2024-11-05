@@ -60,17 +60,50 @@ const mapAnswersToIncentives = (answers) => {
 
 const encode = (arr) => {
   if (arr.length !== 9) {
-      throw new Error('Array must be exactly 9 items long');
+    throw new Error('Array must be exactly 9 items long');
   }
-  return window.btoa(JSON.stringify(arr));
+  
+  // Convert y/n array to binary string
+  const binaryStr = arr
+    .map(val => val === 'y' ? '1' : '0')
+    .join('');
+  
+  // Convert binary to base36 for shorter string
+  const decimal = parseInt(binaryStr, 2);
+  const encoded = decimal.toString(36);
+  
+  // Add checksum (sum of 1s in binary)
+  const checksum = arr.filter(x => x === 'y').length.toString(36);
+  
+  return `${encoded}-${checksum}`;
 };
 
+// Convert numeric string back to y/n array
 const decode = (str) => {
   try {
-    const arr = JSON.parse(window.atob(str));
-    if (!Array.isArray(arr) || arr.length !== 9 || !arr.every(val => val === 'y' || val === 'n')) {
-      throw new Error('Invalid encoded string format');
+    // Split encoded string and checksum
+    const [encoded, checksum] = str.split('-');
+    
+    // Convert back from base36 to decimal
+    const decimal = parseInt(encoded, 36);
+    
+    // Convert to binary and pad with leading zeros
+    const binaryStr = decimal.toString(2).padStart(9, '0');
+    
+    // Convert to y/n array
+    const arr = binaryStr.split('').map(bit => bit === '1' ? 'y' : 'n');
+    
+    // Verify checksum
+    const actualChecksum = arr.filter(x => x === 'y').length.toString(36);
+    if (actualChecksum !== checksum) {
+      throw new Error('Checksum validation failed');
     }
+    
+    // Verify array length
+    if (arr.length !== 9) {
+      throw new Error('Invalid decoded array length');
+    }
+    
     return arr;
   } catch (e) {
     console.error('Error decoding string:', e);
