@@ -109,6 +109,7 @@ const Form = () => {
     if(isCoopMember == "yes") answers[7] = 'y';
     if(isElectricOwner == "yes") answers[8] = 'y';
 
+    const answersEncoded = encode(answers);
     navigate(`/incentives/${answersEncoded}`);
     setLoading(false);
   };
