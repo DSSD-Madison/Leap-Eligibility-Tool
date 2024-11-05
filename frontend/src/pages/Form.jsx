@@ -72,23 +72,23 @@ function Form() {
 
     console.log(data);
 
-    // fetch("localhost:8080/api/responses", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(data),
-    // })
-    //   .then((res) => {
-    //     if (res !== 200) {
-    //       alert("Request failed");
-    //     }
-    //     return res.json();
-    //   })
-    //   .then((json) => {
-    //     alert("Submitted successfully");
-    //     setLoading(false);
-    //   });
+    fetch("localhost:8080/api/responses", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => {
+        if (res !== 200) {
+          alert("Request failed");
+        }
+        return res.json();
+      })
+      .then((json) => {
+        alert("Submitted successfully");
+        setLoading(false);
+      });
 
       // redirect to url 
       let answers = Array(9).fill('n');
