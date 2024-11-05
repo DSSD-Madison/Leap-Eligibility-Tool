@@ -11,15 +11,12 @@ const IncentivesList = () => {
         if (encodedAnswers) {
             try {
                 decodedAnswers = decode(encodedAnswers);
-                const matchedIncentives = mapAnswersToIncentives(decodedAnswers);
-                setSelectedIncentives(matchedIncentives);
             } catch (err) {
                 console.error('Error decoding URL parameter:', err);
             }
-        } else {
-            const matchedIncentives = mapAnswersToIncentives(decodedAnswers);
-            setSelectedIncentives(matchedIncentives);
-        }
+        } 
+        const matchedIncentives = mapAnswersToIncentives(decodedAnswers);
+        setSelectedIncentives(matchedIncentives);
     }, [encodedAnswers]);
 
     const navigateToExternalLink = (url) => {

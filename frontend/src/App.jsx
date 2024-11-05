@@ -24,10 +24,20 @@ const allRoutes = [
   {
     path: "/",
     element: <Home/>,
-  }, {
+    
+  }, 
+  {
+    path: "/q/county/",
+    element: <Form />
+  },
+  {
     path: "/q/county/:countyID",
     element: <Form />
-  }, 
+  },
+  {
+    path: "/incentives/",
+    element: <IncentivesList/>,
+  },
   {
     path: "/incentives/:encodedAnswers",
     element: <IncentivesList/>,
