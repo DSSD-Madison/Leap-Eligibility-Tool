@@ -1,8 +1,9 @@
-function Home() {
-    // testing branch
+import VirginiaMap from "../components/VirginiaMap.jsx";
+
+const Home = () => {
     return (
-      <p>Home</p>
+        <VirginiaMap/>
     )
-  }
-  
-  export default Home
+}
+
+export default Home
