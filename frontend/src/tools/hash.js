@@ -7,19 +7,19 @@ const mapAnswersToIncentives = (answers) => {
   const eligibleIncentives = new Set();
 
   if (answers[0] === 'y') { // Homeowner
-      eligibleIncentives.add("energy-mortgages"); // Energy Efficient Mortgages
-      eligibleIncentives.add("clean-energy-financing"); // Local Option - Clean Energy Financing
-      eligibleIncentives.add("local-rebate"); // Local Residential Rebate Programs
+    eligibleIncentives.add("energy-mortgages"); // Energy Efficient Mortgages
+    eligibleIncentives.add("clean-energy-financing"); // Local Option - Clean Energy Financing
+    eligibleIncentives.add("local-rebate"); // Local Residential Rebate Programs
   }
 
   if (answers[1] === 'y') { // Small business owner
-      eligibleIncentives.add("small-business-loan"); // Small Business & Non-Profit Loan Program
+    eligibleIncentives.add("small-business-loan"); // Small Business & Non-Profit Loan Program
   }
 
   if (answers[2] === 'y') { // Low income (less than 60% of state median)
-      eligibleIncentives.add("liheap"); // Low Income Home Energy Assistance Program
-      eligibleIncentives.add("wap"); // Weatherization Assistance Program
-      eligibleIncentives.add("income-solar"); // Income Qualifying Solar Program
+    eligibleIncentives.add("liheap"); // Low Income Home Energy Assistance Program
+    eligibleIncentives.add("wap"); // Weatherization Assistance Program
+    eligibleIncentives.add("income-solar"); // Income Qualifying Solar Program
   }
 
   // Question 3 (household size) is for information gathering only
@@ -111,8 +111,8 @@ const decode = (str) => {
 
 // Example usage:
 // const answers = ['y', 'n', 'y', 'n', 'y', 'n', 'y', 'n', 'y'];
-// const encoded = encode(answers);
-// const decoded = decode(encoded);
-// const eligibleIncentives = mapAnswersToIncentives(decoded);
+// const encoded = encode(answers); //xx-# where xx is the encoded string and # is the checksum
+// const decoded = decode(encoded); //['y', 'n', 'y', 'n', 'y', 'n', 'y', 'n', 'y']
+// const eligibleIncentives = mapAnswersToIncentives(decoded); //Array of incentive objects that match the answers
 
 export { mapAnswersToIncentives, encode, decode };
