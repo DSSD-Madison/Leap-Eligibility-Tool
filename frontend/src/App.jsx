@@ -19,7 +19,7 @@ const allRoutes = [
     element: <Form />
   }, 
   {
-    path: "/incentives",
+    path: "/incentives/:encodedAnswers",
     element: <IncentivesList/>, //added a route for IncentivesList
   },
 ];

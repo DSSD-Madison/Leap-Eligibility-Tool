@@ -1,5 +1,7 @@
 import React, { useRef, useState } from "react";
 import { useParams } from "react-router-dom";
+import { encode } from '../tools/hash.js'
+import { useNavigate } from 'react-router-dom';
 
 function Form() {
   const nameRef = useRef(null);
@@ -13,6 +15,7 @@ function Form() {
   const [isCoopMember, setIsCoopMember] = useState(null);
   const [isElectricOwner, setIsElectricOwner] = useState(null);
   const { countyID } = useParams();
+  const navigate = useNavigate();
 
   // to create loader when loading
   const [loading, setLoading] = useState(false);
@@ -26,6 +29,7 @@ function Form() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
+    
     if (
       nameRef === null ||
       emailRef === null ||
@@ -49,8 +53,8 @@ function Form() {
 
     const name = nameRef.current.value;
     const email = emailRef.current.value;
-    const income = incomeRef.current.value;
-    const oldest = oldestRef.current.value;
+    const income = parseInt(incomeRef.current.value);
+    const oldest = parseInt(oldestRef.current.value);
 
     const data = {
       name: name,
@@ -68,23 +72,56 @@ function Form() {
 
     console.log(data);
 
-    fetch("localhost:8080/api/responses", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-      .then((res) => {
-        if (res !== 200) {
-          alert("Request failed");
-        }
-        return res.json();
-      })
-      .then((json) => {
-        alert("Submitted successfully");
-        setLoading(false);
-      });
+    // fetch("localhost:8080/api/responses", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(data),
+    // })
+    //   .then((res) => {
+    //     if (res !== 200) {
+    //       alert("Request failed");
+    //     }
+    //     return res.json();
+    //   })
+    //   .then((json) => {
+    //     alert("Submitted successfully");
+    //     setLoading(false);
+    //   });
+
+      // redirect to url 
+      let answers = Array(9).fill('n');
+      if(isHomeowner == "yes"){
+        answers[0] = 'y';
+      } 
+      if(isBusinessOwner == "yes"){
+        answers[1] = 'y';
+      }
+      // Note: I found the median household income was $87,249
+      if(income < 52349){
+        answers[2] = 'y';
+      }
+      console.log("oldest", oldest);
+      if(oldest >= 60){
+        answers[4] = 'y';
+      }
+      if(appliancesPurchased == "yes"){
+        answers[5] = 'y';
+      }
+      if(countyID == 51165){
+        answers[6] = 'y';
+      }
+      if(isCoopMember == "yes"){
+        answers[7] = 'y';
+      }
+      if(isElectricOwner == "yes"){
+        answers[8] = 'y'
+      }
+
+      let answersEncoded = encode(answers);
+      navigate(`/incentives/${answersEncoded}`);
+ 
   };
 
   return (
