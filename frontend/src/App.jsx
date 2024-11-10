@@ -24,6 +24,7 @@ const allRoutes = [
   {
     path: "/",
     element: <Home/>,
+    errorElement: <NotFound/>
     
   }, 
   {
