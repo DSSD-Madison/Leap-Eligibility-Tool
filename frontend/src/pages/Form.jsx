@@ -1,10 +1,10 @@
 import React, { useRef, useState, useEffect } from "react";
 import { encode } from "../tools/hash.js";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, Link } from "react-router-dom";
 import { useSearch } from "../layouts/Layout";
 
 const Form = () => {
-  const { setSearchQuery, isCountyValid, covertCountyIDToName } = useSearch();
+  const { setSearchQuery, isCountyValid, convertCountyIDToName } = useSearch();
   const nameRef = useRef(null);
   const emailRef = useRef(null);
   const incomeRef = useRef(null);
@@ -23,7 +23,7 @@ const Form = () => {
   useEffect(() => {
     if (countyID && isCountyValid(countyID)) {
       setValidCounty(true);
-      setSearchQuery(covertCountyIDToName(countyID));
+      setSearchQuery(convertCountyIDToName(countyID));
     }
   }, [countyID]);
 
@@ -32,6 +32,8 @@ const Form = () => {
       /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     );
   };
+
+  const countyName = convertCountyIDToName(countyID);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -139,6 +141,19 @@ const Form = () => {
       <div className="drawer lg:drawer-open">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col p-10">
+          <div className="flex items-center space-x-4 mb-2">
+            <h1 className="text-gray-700 font-medium">
+              You have selected {countyName}
+            </h1>
+            <Link to="/" className="flex items-center">
+              <button className="btn btn-secondary text-white">
+                Change County
+              </button>
+            </Link>
+          </div>
+
+          <br></br>
+
           {/* Page content here */}
           <label htmlFor="my-drawer-2" className="btn drawer-button lg:hidden">
             Question List
