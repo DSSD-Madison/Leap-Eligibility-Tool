@@ -1,11 +1,8 @@
-import Home from './pages/Home.jsx'
-import Form from './pages/Form.jsx'
-import IncentivesList from './pages/IncentivesList';
-import { Suspense } from 'react';
-import {
-    createBrowserRouter,
-    RouterProvider,
-} from "react-router-dom";
+import Home from "./pages/Home.jsx";
+import Form from "./pages/Form.jsx";
+import IncentivesList from "./pages/IncentivesList";
+import { Suspense } from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./layouts/Layout.jsx";
 
 const LoadingSpinner = () => (
@@ -23,33 +20,32 @@ const withLoadingState = (Component) => (
 const allRoutes = [
   {
     path: "/",
-    element: <Home/>,
-    
-  }, 
+    element: <Home />,
+  },
   {
     path: "/q/county/",
-    element: <Form />
+    element: <Form />,
   },
   {
     path: "/q/county/:countyID",
-    element: <Form />
+    element: <Form />,
   },
   {
     path: "/incentives/",
-    element: <IncentivesList/>,
+    element: <IncentivesList />,
   },
   {
     path: "/incentives/:encodedAnswers",
-    element: <IncentivesList/>,
+    element: <IncentivesList />,
   },
 ];
 
 const router = createBrowserRouter(
   allRoutes.map((route) => ({
-      ...route,
-      element: <Layout>{route.element}</Layout>,
+    ...route,
+    element: <Layout>{route.element}</Layout>,
   }))
-);  
+);
 
 function App() {
   return (
