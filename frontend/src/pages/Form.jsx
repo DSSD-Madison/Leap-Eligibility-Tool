@@ -1,10 +1,10 @@
 import React, { useRef, useState, useEffect } from "react";
-import { encode } from '../tools/hash.js'
-import { useNavigate, useParams } from 'react-router-dom';
-import { useSearch } from '../layouts/Layout';
+import { encode } from "../tools/hash.js";
+import { useNavigate, useParams, Link } from "react-router-dom";
+import { useSearch } from "../layouts/Layout";
 
 const Form = () => {
-  const { setSearchQuery, isCountyValid, covertCountyIDToName } = useSearch();
+  const { setSearchQuery, isCountyValid, convertCountyIDToName } = useSearch();
   const nameRef = useRef(null);
   const emailRef = useRef(null);
   const incomeRef = useRef(null);
@@ -23,9 +23,9 @@ const Form = () => {
   useEffect(() => {
     if (countyID && isCountyValid(countyID)) {
       setValidCounty(true);
-      setSearchQuery(covertCountyIDToName(countyID));
+      setSearchQuery(convertCountyIDToName(countyID));
     }
-  }, [countyID])
+  }, [countyID]);
 
   const validateEmail = (email) => {
     return email.match(
@@ -33,11 +33,13 @@ const Form = () => {
     );
   };
 
+  const countyName = convertCountyIDToName(countyID);
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
     setLoading(true);
-    
+
     if (
       nameRef.current === null ||
       emailRef.current === null ||
@@ -99,15 +101,15 @@ const Form = () => {
     //     setLoading(false);
     //   });
 
-    let answers = Array(9).fill('n');
-    if(isHomeowner == "yes") answers[0] = 'y';
-    if(isBusinessOwner == "yes") answers[1] = 'y';
-    if(income < 52349) answers[2] = 'y';
-    if(oldest >= 60) answers[4] = 'y';
-    if(appliancesPurchased == "yes") answers[5] = 'y';
-    if(countyID == 51165) answers[6] = 'y';
-    if(isCoopMember == "yes") answers[7] = 'y';
-    if(isElectricOwner == "yes") answers[8] = 'y';
+    let answers = Array(9).fill("n");
+    if (isHomeowner == "yes") answers[0] = "y";
+    if (isBusinessOwner == "yes") answers[1] = "y";
+    if (income < 52349) answers[2] = "y";
+    if (oldest >= 60) answers[4] = "y";
+    if (appliancesPurchased == "yes") answers[5] = "y";
+    if (countyID == 51165) answers[6] = "y";
+    if (isCoopMember == "yes") answers[7] = "y";
+    if (isElectricOwner == "yes") answers[8] = "y";
 
     const answersEncoded = encode(answers);
     navigate(`/incentives/${answersEncoded}`);
@@ -125,7 +127,8 @@ const Form = () => {
               Please use the search bar above to select your county.
             </p>
             <p>
-              This will help us provide you with the most relevant information and assistance.
+              This will help us provide you with the most relevant information
+              and assistance.
             </p>
           </div>
         </div>
@@ -138,6 +141,19 @@ const Form = () => {
       <div className="drawer lg:drawer-open">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col p-10">
+          <div className="flex items-center space-x-4 mb-2">
+            <h1 className="text-gray-700 font-medium">
+              You have selected {countyName}
+            </h1>
+            <Link to="/" className="flex items-center">
+              <button className="btn btn-secondary text-white">
+                Change County
+              </button>
+            </Link>
+          </div>
+
+          <br></br>
+
           {/* Page content here */}
           <label htmlFor="my-drawer-2" className="btn drawer-button lg:hidden">
             Question List
@@ -223,7 +239,7 @@ const Form = () => {
 
             {/* business owner */}
             <label
-              htmlFor="buisness"
+              htmlFor="business"
               className="block text-gray-700 font-medium mb-2"
               id="small"
             >
@@ -233,7 +249,7 @@ const Form = () => {
               <input
                 type="radio"
                 id="yes2"
-                name="buisness"
+                name="business"
                 value="yes"
                 onChange={() => setIsBusinessOwner("yes")}
                 className="w-4 h-4 text-blue-600 focus:ring-blue-500 border-gray-300"
@@ -250,7 +266,7 @@ const Form = () => {
               <input
                 type="radio"
                 id="no2"
-                name="buisness"
+                name="business"
                 value="no"
                 onChange={() => setIsBusinessOwner("no")}
                 className="w-4 h-4 text-blue-600 focus:ring-blue-500 border-gray-300"
@@ -381,8 +397,14 @@ const Form = () => {
               className="block text-gray-700 font-medium mb-2"
               id="appliance"
             >
-              Have you purchased or updated any of the following appliances: <br />
-              <span className="font-normal">Water Heaters, Furnaces, Boilers, Heat pumps, Air conditioners, Duct/Air sealing, Building Insulation, Windows, Doors, Clothes Washers, Dishwasher, Refrigerators/Freezers, Programmable Thermostats, or anything similar from 2005-2023?</span>
+              Have you purchased or updated any of the following appliances:{" "}
+              <br />
+              <span className="font-normal">
+                Water Heaters, Furnaces, Boilers, Heat pumps, Air conditioners,
+                Duct/Air sealing, Building Insulation, Windows, Doors, Clothes
+                Washers, Dishwasher, Refrigerators/Freezers, Programmable
+                Thermostats, or anything similar from 2005-2023?
+              </span>
             </label>
             <div className="flex items-center mb-4">
               <input
@@ -534,7 +556,7 @@ const Form = () => {
               <a href="#homeowner">Homeowner</a>
             </li>
             <li>
-              <a href="#small">Small buisness owner</a>
+              <a href="#small">Small business owner</a>
             </li>
             <li>
               <a href="#income_div">Household income</a>
@@ -559,6 +581,6 @@ const Form = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Form;

@@ -1,9 +1,7 @@
 import VirginiaMap from "../components/VirginiaMap.jsx";
 
 const Home = () => {
-    return (
-        <VirginiaMap/>
-    )
-}
+  return <VirginiaMap />;
+};
 
-export default Home
+export default Home;
