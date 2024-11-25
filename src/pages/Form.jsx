@@ -204,7 +204,7 @@ const Form = () => {
 
           {/* Form Content */}
           <div className="max-w-3xl mx-auto w-full px-4 sm:px-6 py-8">
-            <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden mb-6">
+            <label htmlFor="my-drawer-2" className="btn btn-secondary drawer-button lg:hidden mb-6">
               View Questions List
             </label>
 
@@ -285,7 +285,7 @@ const Form = () => {
                           name="homeowner"
                           value="yes"
                           onChange={() => setIsHomeowner("yes")}
-                          className="radio radio-primary"
+                          className="radio radio-secondary"
                         />
                         <label htmlFor="yes1" className="ml-3">Yes</label>
                       </div>
@@ -296,7 +296,7 @@ const Form = () => {
                           name="homeowner"
                           value="no"
                           onChange={() => setIsHomeowner("no")}
-                          className="radio radio-primary"
+                          className="radio radio-secondary"
                         />
                         <label htmlFor="no1" className="ml-3">No</label>
                       </div>
@@ -315,7 +315,7 @@ const Form = () => {
                           name="business"
                           value="yes"
                           onChange={() => setIsBusinessOwner("yes")}
-                          className="radio radio-primary"
+                          className="radio radio-secondary"
                         />
                         <label htmlFor="yes2" className="ml-3">Yes</label>
                       </div>
@@ -326,7 +326,7 @@ const Form = () => {
                           name="business"
                           value="no"
                           onChange={() => setIsBusinessOwner("no")}
-                          className="radio radio-primary"
+                          className="radio radio-secondary"
                         />
                         <label htmlFor="no2" className="ml-3">No</label>
                       </div>
@@ -372,7 +372,7 @@ const Form = () => {
                             name="live"
                             value={option.value}
                             onChange={() => setHouseholdSize(option.value)}
-                            className="radio radio-primary"
+                            className="radio radio-secondary"
                           />
                           <label htmlFor={option.id} className="ml-3">{option.label}</label>
                         </div>
@@ -419,7 +419,7 @@ const Form = () => {
                           name="purchased"
                           value="yes"
                           onChange={() => setAppliancesPurchased("yes")}
-                          className="radio radio-primary"
+                          className="radio radio-secondary"
                         />
                         <label htmlFor="yes3" className="ml-3">Yes</label>
                       </div>
@@ -430,7 +430,7 @@ const Form = () => {
                           name="purchased"
                           value="no"
                           onChange={() => setAppliancesPurchased("no")}
-                          className="radio radio-primary"
+                          className="radio radio-secondary"
                         />
                         <label htmlFor="no3" className="ml-3">No</label>
                       </div>
@@ -449,7 +449,7 @@ const Form = () => {
                           name="coop"
                           value="yes"
                           onChange={() => setIsCoopMember("yes")}
-                          className="radio radio-primary"
+                          className="radio radio-secondary"
                         />
                         <label htmlFor="yes4" className="ml-3">Yes</label>
                       </div>
@@ -460,7 +460,7 @@ const Form = () => {
                           name="coop"
                           value="no"
                           onChange={() => setIsCoopMember("no")}
-                          className="radio radio-primary"
+                          className="radio radio-secondary"
                         />
                         <label htmlFor="no4" className="ml-3">No</label>
                       </div>
@@ -479,7 +479,7 @@ const Form = () => {
                           name="electric"
                           value="yes"
                           onChange={() => setIsElectricOwner("yes")}
-                          className="radio radio-primary"
+                          className="radio radio-secondary"
                         />
                         <label htmlFor="yes5" className="ml-3">Yes</label>
                       </div>
@@ -490,7 +490,7 @@ const Form = () => {
                           name="electric"
                           value="no"
                           onChange={() => setIsElectricOwner("no")}
-                          className="radio radio-primary"
+                          className="radio radio-secondary"
                         />
                         <label htmlFor="no5" className="ml-3">No</label>
                       </div>
@@ -506,7 +506,7 @@ const Form = () => {
                     id="stayInContact"
                     checked={stayInContact}
                     onChange={(e) => setStayInContact(e.target.checked)}
-                    className="checkbox checkbox-primary"
+                    className="checkbox checkbox-secondary"
                   />
                   <label htmlFor="stayInContact" className="text-gray-700 font-medium">
                     Stay in contact with LEAP
@@ -590,7 +590,7 @@ const Form = () => {
                               value={option.toLowerCase()}
                               checked={housingStatus === option.toLowerCase()}
                               onChange={(e) => setHousingStatus(e.target.value)}
-                              className="radio radio-primary"
+                              className="radio radio-secondary"
                             />
                             <label htmlFor={option.toLowerCase()} className="ml-3">{option}</label>
                           </div>
@@ -612,7 +612,7 @@ const Form = () => {
                               value={option.toLowerCase()}
                               checked={isDisabled === option.toLowerCase()}
                               onChange={(e) => setIsDisabled(e.target.value)}
-                              className="radio radio-primary"
+                              className="radio radio-secondary"
                             />
                             <label htmlFor={`disabled-${option.toLowerCase()}`} className="ml-3">{option}</label>
                           </div>
@@ -634,7 +634,7 @@ const Form = () => {
                               value={option.toLowerCase()}
                               checked={hispanicOrigin === option.toLowerCase()}
                               onChange={(e) => setHispanicOrigin(e.target.value)}
-                              className="radio radio-primary"
+                              className="radio radio-secondary"
                             />
                             <label htmlFor={`hispanic-${option.toLowerCase()}`} className="ml-3">{option}</label>
                           </div>
@@ -702,7 +702,7 @@ const Form = () => {
                               value={option.toLowerCase()}
                               checked={newsletter === option.toLowerCase()}
                               onChange={(e) => setNewsletter(e.target.value)}
-                              className="radio radio-primary"
+                              className="radio radio-secondary"
                             />
                             <label htmlFor={`newsletter-${option.toLowerCase()}`} className="ml-3">{option}</label>
                           </div>
@@ -716,12 +716,12 @@ const Form = () => {
               {/* Submit Button */}
               <div className="flex justify-center py-6">
                 {loading ? (
-                  <span className="loading loading-spinner loading-lg text-primary"></span>
+                  <span className="loading loading-spinner loading-lg text-secondary"></span>
                 ) : (
                   <button
                     type="submit"
                     onClick={handleSubmit}
-                    className="btn btn-primary btn-lg text-white min-w-[200px]"
+                    className="btn btn-secondary btn-lg text-white min-w-[200px]"
                   >
                     Submit Assessment
                   </button>
@@ -737,7 +737,7 @@ const Form = () => {
           <div className="bg-white w-80 min-h-full border-l">
             <div className="sticky top-0 h-screen overflow-y-auto">
               {/* Progress Header */}
-              <div className="bg-primary/5 p-6 border-b">
+              <div className="bg-secondary/5 p-6 border-b">
                 <h2 className="font-semibold text-xl text-gray-800">
                   {countyName} County
                 </h2>
@@ -751,7 +751,7 @@ const Form = () => {
                 {questionSections.map((section, index) => (
                   <div key={section.id} className={`${index !== 0 ? 'mt-6' : ''}`}>
                     <div className="flex items-center gap-2 px-2 mb-2">
-                      <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center text-xs text-primary font-medium">
+                      <div className="w-6 h-6 rounded-full bg-secondary/10 flex items-center justify-center text-xs text-secondary font-medium">
                         {index + 1}
                       </div>
                       <h3 className="font-medium text-gray-900 text-sm">
@@ -783,7 +783,7 @@ const Form = () => {
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
                     stroke="currentColor"
-                    className="w-5 h-5 text-primary"
+                    className="w-5 h-5 text-secondary"
                   >
                     <path
                       strokeLinecap="round"
@@ -797,11 +797,11 @@ const Form = () => {
                 </div>
                 <p className="text-sm text-gray-600">
                   Visit our{' '}
-                  <Link to="/about" className="text-primary hover:underline">
+                  <Link to="/about" className="text-secondary hover:underline">
                     FAQ page
                   </Link>
                   {' '}or{' '}
-                  <a href="#" className="text-primary hover:underline">
+                  <a href="#" className="text-secondary hover:underline">
                     contact support
                   </a>
                   {' '}for assistance.

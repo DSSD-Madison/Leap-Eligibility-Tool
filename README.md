@@ -2,8 +2,9 @@
 # LEAP Eligibility Tool Project
 
 ## Project Overview
-The Local Energy Alliance Program (LEAP) requires the development of an eligibility tool to evaluate available incentive programs and tax rebates for users in the state of Virginia. [Visit this link](https://example.com) for the official write-up (MOU).
+The Local Energy Alliance Program (LEAP) requires the development of an eligibility tool to evaluate available incentive programs and tax rebates for users in the state of Virginia. [Visit this link](https://example.com) for the official write-up (MOU). 
 
+The website is live at [https://leap-eligibility-tool.netlify.app/](https://leap-eligibility-tool.netlify.app/)
 ---
 
 ## Key Features

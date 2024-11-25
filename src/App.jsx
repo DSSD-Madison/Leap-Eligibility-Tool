@@ -3,6 +3,7 @@ import Form from "./pages/Form.jsx";
 import Layout from "./layouts/Layout.jsx";
 import IncentivesList from "./pages/IncentivesList";
 import AboutPage from "./pages/About.jsx";
+import NotFound from "./pages/NotFound.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Suspense } from "react";
 
@@ -42,6 +43,10 @@ const allRoutes = [
   {
     path: "/about",
     element: <AboutPage />,
+  },
+  {
+    path : "*",
+    element: <NotFound />,
   }
 ];
 
