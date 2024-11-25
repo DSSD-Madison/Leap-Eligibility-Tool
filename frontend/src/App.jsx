@@ -1,6 +1,8 @@
 import Home from './pages/Home.jsx'
 import Form from './pages/Form.jsx'
 import IncentivesList from './pages/IncentivesList';
+import About from "./pages/About.jsx";
+
 import { Suspense } from 'react';
 import {
     createBrowserRouter,
@@ -23,24 +25,27 @@ const withLoadingState = (Component) => (
 const allRoutes = [
   {
     path: "/",
-    element: <Home/>,
-    
-  }, 
+    element: <Home />,
+  },
+  {
+    path: "/about",
+    element: <About />,
+  },
   {
     path: "/q/county/",
-    element: <Form />
+    element: <Form />,
   },
   {
     path: "/q/county/:countyID",
-    element: <Form />
+    element: <Form />,
   },
   {
     path: "/incentives/",
-    element: <IncentivesList/>,
+    element: <IncentivesList />,
   },
   {
     path: "/incentives/:encodedAnswers",
-    element: <IncentivesList/>,
+    element: <IncentivesList />,
   },
 ];
 
