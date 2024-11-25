@@ -83,10 +83,10 @@ const Form = () => {
     const income = parseInt(incomeRef.current.value);
     const oldest = parseInt(oldestRef.current.value);
 
-    const data = {
+    const leapData = {
       name: name,
-      email: email,
-      county: countyID,
+      phone: phoneNumber,
+      prefferedContact: contactMethod,
       isHomeowner: isHomeowner,
       isBusinessOwner: isBusinessOwner,
       income: income,

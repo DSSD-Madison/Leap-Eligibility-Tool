@@ -4,7 +4,7 @@ import { SearchProvider } from "../contexts/SearchContext";
 import MediaQuery from "../tools/mediaQuery";
 
 const Layout = ({ children }) => {
-  const isMobile = MediaQuery.isMobile();
+  const isNotDesktop = MediaQuery.isNotDesktop();
 
   const DesktopHeader = () => (
     <div className="flex justify-between items-center w-almost_full m-almost_full">
@@ -85,7 +85,7 @@ const Layout = ({ children }) => {
   return (
     <SearchProvider>
       <div className="flex flex-col min-h-screen bg-base-100 text-lg">
-        {isMobile ? <MobileHeader /> : <DesktopHeader />}
+        {isNotDesktop ? <MobileHeader /> : <DesktopHeader />}
         <main className="flex-grow w-almost_full mb-almost_full mx-auto bg-bg_grey">
           {children}
         </main>

@@ -1,9 +1,10 @@
 import Home from "./pages/Home.jsx";
 import Form from "./pages/Form.jsx";
-import IncentivesList from "./pages/IncentivesList";
-import { Suspense } from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./layouts/Layout.jsx";
+import IncentivesList from "./pages/IncentivesList";
+import AboutPage from "./pages/About.jsx";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Suspense } from "react";
 
 const LoadingSpinner = () => (
   <div className="flex justify-center items-center min-h-screen">
@@ -38,6 +39,10 @@ const allRoutes = [
     path: "/incentives/:encodedAnswers",
     element: <IncentivesList />,
   },
+  {
+    path: "/about",
+    element: <AboutPage />,
+  }
 ];
 
 const router = createBrowserRouter(
