@@ -7,19 +7,17 @@ function About() {
         <div class="hero-content text-center">
           <div className="max-w-lg md:max-w-2xl lg:max-w-4xl">
             <h1 class="text-6xl font-bold">About This Tool</h1>
-            <p class="py-6">
+            <p class="pt-6">
               <span className="font-bold text-yellow-400">Purpose: </span>
               The eligibility tool aims to simplify access to energy-saving
-              programs and tax rebates for Virginia residents by providing
-              personalized recommendations based on user input, such as location
-              and household details. Its mission is to make energy efficiency
-              and sustainability initiatives more accessible, empowering
-              homeowners and small business owners to take advantage of
-              available incentives. By integrating user-friendly features and
-              clear guidance, the tool supports LEAP's broader vision of
-              building a more energy-efficient and resilient community.
+              programs and tax rebates for Virginia residents. Its mission is to
+              make energy efficiency and sustainability initiatives more
+              accessible, empowering you to take advantage of available
+              incentives. By integrating friendly features and clear guidance,
+              the tool supports our broader vision of building a more
+              energy-efficient and resilient community.
             </p>
-            <button class="btn btn-secondary text-white">Learn More</button>
+            <p class="text-right text-xl font-bold text-yellow-400">- LEAP</p>
           </div>
         </div>
       </div>
@@ -73,8 +71,10 @@ function About() {
         </div>
       </div>
 
-      <div className="flex justify-center bg-base-200 py-5">
+      <div className="flex items-center text-center justify-center min-h-screen bg-base-200 py-5">
         <div className="max-w-lg md:max-w-2xl lg:max-w-4xl">
+          <h1 class="pb-3 text-6xl font-bold">FAQ</h1>
+
           <div class="collapse collapse-plus bg-base-200">
             <input type="radio" name="my-accordion-3" checked="checked" />
             <div class="collapse-title text-xl font-medium">
