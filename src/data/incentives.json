@@ -1,6 +1,18 @@
 {
   "incentives": [
     {
+      "id": "local-energy-alliance",
+      "name": "Local Energy Alliance Program (LEAP)",
+      "state": "VA",
+      "category": "MISSING",
+      "policyType": "MISSING",
+      "created": "MISSING",
+      "lastUpdated": "MISSING",
+      "link": "https://www.leap-va.org/sign-up",
+      "btn_text": "Get Started",
+      "default": true
+    },
+    {
       "id": "shared-solar",
       "name": "Shared Solar Program",
       "state": "VA",

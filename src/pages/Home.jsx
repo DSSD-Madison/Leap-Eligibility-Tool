@@ -47,9 +47,7 @@ const Home = () => {
   }
 
   return (
-    <div className="w-full h-screen bg-base-100">
-      <VirginiaMap />
-    </div>
+    <VirginiaMap />
   );
 };
 

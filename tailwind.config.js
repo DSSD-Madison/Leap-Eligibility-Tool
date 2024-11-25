@@ -23,7 +23,7 @@ export default {
       {
         mytheme: {
           "primary": "#570df8",
-          "secondary": "#1e90ff",  // dodgerblue
+          "secondary": "#386FA4",  // dodgerblue
           "accent": "#37cdbe",
           "neutral": "#3d4451",
           "base-100": "#ffffff",

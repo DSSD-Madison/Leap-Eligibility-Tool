@@ -88,7 +88,7 @@ const VirginiaMap = () => {
                                     navigate(`/q/county/${geo.properties.GEOID}`)
                                 }}
                                 geography={geo}
-                                fill="#1e90ff"
+                                fill="#386FA4"
                                 stroke="lightgrey"
                                 className="cursor-pointer"
                                 style={{

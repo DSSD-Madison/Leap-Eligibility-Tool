@@ -1,6 +1,5 @@
 {
   "name": "leap-eligibility-tool",
-  "homepage": "https://dssd-madison.github.io/Leap-Eligibility-Tool/",
   "private": true,
   "version": "0.0.0",
   "type": "module",

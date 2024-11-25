@@ -112,7 +112,9 @@ const IncentivesList = () => {
                                         onClick={() => navigateToExternalLink(incentive.link)}
                                         className="btn btn-secondary btn-sm text-white"
                                     >
-                                        Learn More
+                                       {
+                                            incentive.btn_text || 'Learn More'
+                                       }
                                     </button>
                                 </td>
                             </tr>

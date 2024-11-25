@@ -40,7 +40,7 @@ const AboutPage = () => {
           </svg>
           <h3 className="text-xl font-semibold mb-2">Privacy First</h3>
           <p className="text-gray-600">
-            Your information stays in your browser. No data is collected or stored unless you choose to proceed with LEAP's services.
+            Your information stays in your browser. 
           </p>
         </div>
 
@@ -50,49 +50,13 @@ const AboutPage = () => {
           </svg>
           <h3 className="text-xl font-semibold mb-2">Data Security</h3>
           <p className="text-gray-600">
-            Only when you decide to move forward with LEAP will your information be securely shared with their team.
+            No data is collected or stored on our website.
           </p>
         </div>
+        <br />
       </div>
-
-      {/* Privacy Information */}
-      <div className="mb-16">
-        <h2 className="text-2xl font-bold mb-6">How We Handle Your Information</h2>
-        <div className="space-y-4 bg-gray-50 p-6 rounded-lg">
-          <div className="mb-4">
-            <h3 className="font-semibold mb-2">Initial Assessment</h3>
-            <p className="text-gray-600">All eligibility checks are performed locally in your browser. Your personal information never leaves your device during the initial assessment.</p>
-          </div>
-          <div className="mb-4">
-            <h3 className="font-semibold mb-2">Your Choice to Connect</h3>
-            <p className="text-gray-600">Only if you choose to proceed with LEAP's services will your information be securely transmitted to their team for further assistance.</p>
-          </div>
-          <div>
-            <h3 className="font-semibold mb-2">Secure Handling</h3>
-            <p className="text-gray-600">When you decide to connect with LEAP, your data is handled according to strict privacy and security standards, integrated seamlessly with LEAP's secure systems.</p>
-          </div>
-        </div>
+      <p class="text-sm text-center">This web=app was made by members at <a href="https://madison.dssdglobal.org/" class="text-blue-600 hover:text-blue-800">Data Science for Sustainable Development (Madison Chapter)</a> in collaboration with the Local Energy Alliance Program (LEAP).</p>
       </div>
-
-      {/* Team Section */}
-      <div>
-        <h2 className="text-2xl font-bold mb-6">Our Team</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          {[
-            "Ashwin Talwalkar",
-            "Donglai Duan",
-            "Rohit Mittal",
-            "Kedar Simhadri",
-            "Shivam Shah",
-            "Sarah Rubenstein"
-          ].map((member, index) => (
-            <div key={index} className="p-4 text-center bg-gray-50 rounded-lg">
-              <p className="font-medium">{member}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
   );
 };
 

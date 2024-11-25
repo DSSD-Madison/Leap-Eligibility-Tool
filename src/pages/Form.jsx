@@ -148,13 +148,13 @@ const Form = () => {
         { id: "electric", label: "Electric Vehicle" },
       ]
     },
-    {
-      id: "leap_specific",
-      title: "LEAP Specific",
-      items: [
-        { id: "stayInContact", label: "Stay in Contact" },
-      ]
-    }
+    // {
+    //   id: "leap_specific",
+    //   title: "LEAP Specific",
+    //   items: [
+    //     { id: "stayInContact", label: "Stay in Contact" },
+    //   ]
+    // }
   ];
 
   const countyName = convertCountyIDToName(countyID);
@@ -204,7 +204,7 @@ const Form = () => {
 
           {/* Form Content */}
           <div className="max-w-3xl mx-auto w-full px-4 sm:px-6 py-8">
-            <label htmlFor="my-drawer-2" className="btn btn-secondary drawer-button lg:hidden mb-6">
+            <label htmlFor="my-drawer-2" className="btn btn-secondary drawer-button lg:hidden mb-6 text-white">
               View Questions List
             </label>
 
@@ -499,7 +499,7 @@ const Form = () => {
                 </div>
               </div>
 
-              <div className="bg-white rounded-lg shadow-sm p-6 space-y-6">
+              {/* <div className="bg-white rounded-lg shadow-sm p-6 space-y-6">
                 <div className="flex items-center space-x-2">
                   <input
                     type="checkbox"
@@ -710,8 +710,8 @@ const Form = () => {
                       </div>
                     </div>
                   </div>
-                )}
-              </div>
+                )} 
+              </div>*/}
 
               {/* Submit Button */}
               <div className="flex justify-center py-6">

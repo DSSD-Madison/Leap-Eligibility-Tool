@@ -40,7 +40,7 @@ The website is live at [https://leap-eligibility-tool.netlify.app/](https://leap
 - Highlight location-dependent services with map visualizations.
 
 ### 7. Privacy and Security
-- Safeguard sensitive user data and ensure compliance with standards.
+- No  user data is every sent anywhere. The tool is completely client-side.
 
 ---
 
@@ -67,43 +67,7 @@ The website is live at [https://leap-eligibility-tool.netlify.app/](https://leap
 | **Begin Development**        | Mid-September to Late-October |
 | **Initial Demo**             | Late-October                |
 | **Testing + Documentation**  | Mid-November to Late-November |
-| **MVP Launch**               | Late-November to Early-December |
-| **Feature Additions**        | Late-January to Late-March  |
-| **Final Product Delivery**   | Early-April                 |
-| **Support Period**           | April to Early-May          |
-
----
-
-## Technical Timeline
-
-### Week 1: Project Kickoff
-- [ ] Initial meeting with LEAP
-- [ ] Review project requirements (Appendix A)
-- [ ] Define scope and objectives
-- [ ] Set up project management tools
-
-### Week 2: Design Phase
-- [ ] Wireframe user interface
-- [ ] Develop user flow diagrams
-- [ ] Gather feedback from LEAP
-
-### Week 3-5: Frontend Development
-- [ ] Set up development environment
-- [ ] Build UI components
-- [ ] Integrate map visualization library
-- [ ] Implement user input forms
-
-### Week 3-4: Backend Development
-- [ ] Set up server and database
-- [ ] Create API endpoints
-- [ ] Develop eligibility logic
-- [ ] Integrate with Monday.com
-
-### Week 5-6: Integration and Testing
-- [ ] Connect frontend to backend
-- [ ] Add error handling and validation
-- [ ] Conduct usability testing
-- [ ] Refine UI/UX based on feedback
+| **Product Launch**               | Late-November to Early-December |
 
 ---
 
@@ -129,10 +93,11 @@ The website is live at [https://leap-eligibility-tool.netlify.app/](https://leap
 - **Kedar Simhadri**: [Kedars23](https://github.com/Kedars23)
 - **Shivam Shah**: [ShivamShah18](https://github.com/ShivamShah18)
 - **Sarah Rubenstein**: [sarah-i-rubenstein2](https://github.com/sarah-i-rubenstein2)
+- **Vedant Patel**: [VedantPatel27]()
 
 ---
 
 ## Additional Notes
-- Regular bi-weekly meetings with LEAP for progress updates.
+- Regular weekly meetings with LEAP for progress updates.
 - Frequent email check-ins for queries and deliverables.
 - DSIRE homepage serves as a benchmark for map visualization features.
