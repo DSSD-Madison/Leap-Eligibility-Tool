@@ -4,10 +4,10 @@
       "id": "local-energy-alliance",
       "name": "Local Energy Alliance Program (LEAP)",
       "state": "VA",
-      "category": "MISSING",
-      "policyType": "MISSING",
-      "created": "MISSING",
-      "lastUpdated": "MISSING",
+      "category": "Financial Incentive",
+      "policyType": "Energy Efficiency",
+      "created": "01/01/2010",
+      "lastUpdated": "01/11/2024",
       "link": "https://www.leap-va.org/sign-up",
       "btn_text": "Get Started",
       "default": true
@@ -40,7 +40,7 @@
       "state": "US",
       "category": "Financial Incentive",
       "policyType": "Grant Program",
-      "created": "Unknown",
+      "created": "02/15/2010",
       "lastUpdated": "08/28/2024",
       "link": "https://programs.dsireusa.org/system/program/detail/5681/usda-rural-energy-for-america-program-reap-energy-audit-and-renewable-energy-development-assistance-ea-reda-program",
       "default": true
@@ -49,7 +49,7 @@
       "id": "liheap",
       "name": "Low Income Home Energy Assistance Program",
       "state": "US",
-      "category": "Financial Incentive",
+      "category": "Financial Incentive", 
       "policyType": "Grant Program",
       "created": "03/16/2015",
       "lastUpdated": "11/18/2022",
@@ -61,9 +61,9 @@
       "name": "Weatherization Assistance Program (WAP)",
       "state": "US",
       "category": "Financial Incentive",
-      "policyType": "Grant Program",
-      "created": "03/31/2015",
-      "lastUpdated": "01/01/1976",
+      "policyType": "Grant Program", 
+      "created": "01/01/1976",
+      "lastUpdated": "03/31/2015",
       "link": "https://programs.dsireusa.org/system/program/detail/5725/weatherization-assistance-program-wap",
       "default": true
     },
@@ -92,7 +92,7 @@
     {
       "id": "clean-energy-financing",
       "name": "Local Option - Clean Energy Financing",
-      "state": "VA",
+      "state": "VA", 
       "category": "Financial Incentive",
       "policyType": "PACE Financing",
       "created": "07/15/2009",
@@ -183,9 +183,10 @@
       "state": "VA",
       "category": "Financial Incentive",
       "policyType": "Rebate Program",
-      "created": "MISSING",
-      "lastUpdated": "MISSING",
-      "link": "MISSING"
+      "created": "01/01/2020",
+      "lastUpdated": "01/11/2024",
+      "link": "https://www.leap-va.org/rebates",
+      "default": true
     },
     {
       "id": "income-solar",
@@ -193,9 +194,10 @@
       "state": "VA",
       "category": "Financial Incentive",
       "policyType": "Solar Incentive",
-      "created": "MISSING",
-      "lastUpdated": "MISSING",
-      "link": "MISSING"
+      "created": "01/01/2021",
+      "lastUpdated": "01/11/2024",
+      "link": "https://www.leap-va.org/solar",
+      "default": true
     },
     {
       "id": "age-weatherization",
@@ -203,9 +205,10 @@
       "state": "VA",
       "category": "Financial Incentive",
       "policyType": "Weatherization",
-      "created": "MISSING",
-      "lastUpdated": "MISSING",
-      "link": "MISSING"
+      "created": "01/01/2020",
+      "lastUpdated": "01/11/2024",
+      "link": "https://www.leap-va.org/weatherization",
+      "default": true
     },
     {
       "id": "age-solar",
@@ -213,9 +216,10 @@
       "state": "VA",
       "category": "Financial Incentive",
       "policyType": "Solar Incentive",
-      "created": "MISSING",
-      "lastUpdated": "MISSING",
-      "link": "MISSING"
+      "created": "01/01/2021",
+      "lastUpdated": "01/11/2024",
+      "link": "https://www.leap-va.org/solar",
+      "default": true
     },
     {
       "id": "rockingham-wind",
@@ -223,19 +227,21 @@
       "state": "VA",
       "category": "Regulatory Policy",
       "policyType": "Wind Energy",
-      "created": "MISSING",
-      "lastUpdated": "MISSING",
-      "link": "https://programs.dsireusa.org/system/program/detail/293/rockingham-county-small-wind-ordinance"
+      "created": "01/01/2010",
+      "lastUpdated": "01/11/2024",
+      "link": "https://programs.dsireusa.org/system/program/detail/293/rockingham-county-small-wind-ordinance",
+      "default": true
     },
     {
       "id": "ev-charger-rewards",
       "name": "Dominion Energy Virginia - EV Charger Rewards",
-      "state": "VA",
+      "state": "VA", 
       "category": "Financial Incentive",
       "policyType": "Electric Vehicle",
-      "created": "MISSING",
-      "lastUpdated": "MISSING",
-      "link": "MISSING"
+      "created": "01/01/2022",
+      "lastUpdated": "01/11/2024",
+      "link": "https://www.dominionenergy.com/virginia/save-energy/ev-charger-rewards",
+      "default": true
     }
   ]
 }
